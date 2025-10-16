@@ -9,14 +9,14 @@ const Total = () => {
     dispatch(filterExpenses(category1));
   };
   return (
-    <div className="flex justify-between items-center mt-5">
+    <div className="flex justify-between items-center px-2 mt-5">
       <div>
         <select
           value={category1}
           onChange={(e) => {
             setCategory1(e.target.value);
           }}
-          className="outline-none  bg-gray-300 rounded py-2 px-3"
+          className="outline-none  bg-gray-300 rounded py-2 "
         >
           <option value="All">All</option>
           <option value="Food">Food</option>

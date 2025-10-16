@@ -12,6 +12,8 @@ const expenseSlice = createSlice({
       };
       state.tasks.push(newTask);
       state.allTask.push(newTask);
+
+    
     },
     filterExpenses: (state, action) => {
       if (action.payload === "All" || !action.payload) {
@@ -26,11 +28,15 @@ const expenseSlice = createSlice({
         0
       );
       state.TotalExp = total;
+
+        
     },
     deleteExpenses:(state,action)=>{
       state.allTask=state.allTask.filter((elem)=>action.payload!==elem.id)
        state.tasks=state.tasks.filter((elem)=>action.payload!==elem.id)
       
+
+         
     }
   },
 });
