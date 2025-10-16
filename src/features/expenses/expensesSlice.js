@@ -27,7 +27,12 @@ const expenseSlice = createSlice({
       );
       state.TotalExp = total;
     },
+    deleteExpenses:(state,action)=>{
+      state.allTask=state.allTask.filter((elem)=>action.payload!==elem.id)
+       state.tasks=state.tasks.filter((elem)=>action.payload!==elem.id)
+      
+    }
   },
 });
-export const { addTask, filterExpenses } = expenseSlice.actions;
+export const { addTask, filterExpenses,deleteExpenses } = expenseSlice.actions;
 export default expenseSlice.reducer;
