@@ -9,6 +9,15 @@ const Input = () => {
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
+    if(title.trim()===""||amount.trim()===""||category===""){
+      alert("Please Fill All Details...? ")
+      return;
+    }
+      const numAmount = Number(amount);
+    if (isNaN(numAmount) || numAmount <= 0) {
+      alert("Please Enter a Valid Number in Amount...?");
+      return;
+    }
     dispatch(addTask({ title, amount, category }));
     setAmount("");
     setTitle("");
@@ -31,7 +40,7 @@ const Input = () => {
           type="text"
           placeholder="Enter Title ..?"
         />
-        <input
+        <input 
           value={amount}
           onChange={(e) => {
             setAmount(e.target.value);
